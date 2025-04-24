@@ -23,11 +23,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html
+      lang="pt-BR"
+      data-darkreader-mode="dynamic"
+      data-darkreader-scheme="dark"
+      data-darkreader-proxy-injected="true"
+    >
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <main className="w-full h-full">
+          {children}
+        </main>
       </body>
     </html>
   );
