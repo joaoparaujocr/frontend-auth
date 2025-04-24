@@ -3,14 +3,6 @@ import userEvent from '@testing-library/user-event'
 import SignUpPage from '@/app/signup/page'
 import { api } from '@/services/api'
 
-jest.mock('@/services/api', () => ({
-  api: {
-    post: jest.fn()
-  }
-}))
-
-global.fetch = jest.fn()
-
 describe('SignUpPage', () => {
   beforeEach(() => {
     jest.clearAllMocks()
