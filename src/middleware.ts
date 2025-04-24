@@ -16,8 +16,6 @@ const forProfile = async (request: NextRequest) => {
       }
     })
 
-    console.log(response.status)
-
     if (response.status !== 200) {
       return NextResponse.redirect(new URL('/signup', request.url))
     }
@@ -80,5 +78,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/profile', '/signup']
+
 }
