@@ -14,9 +14,14 @@ const post = async <T = undefined>(endpoint: string | URL | globalThis.Request, 
   })
 }
 
-const get = async (endpoint: string | URL | globalThis.Request, config: RequestInit) => {
+const get = async (endpoint: string | URL | globalThis.Request, config?: RequestInit) => {
 
-  return await fetch(`${baseURL}${endpoint}`, { method: 'GET', ...config })
+  return await fetch(`${baseURL}${endpoint}`, {
+    method: 'GET',
+    credentials: 'include',
+    mode: 'cors',
+    ...config
+  })
 }
 
 export const api = {
